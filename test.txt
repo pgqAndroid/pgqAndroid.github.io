@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 test
 aaa
+=======
+other position commit
+>>>>>>> da3c741ba35028702f5f49d12948e6996ef3e7a1
