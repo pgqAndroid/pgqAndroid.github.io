@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>h5 drag and drop</title>
+
+	<style type="text/css">
+	#div1,#div2,#div3 {
+		float: left;
+		width: 300px;
+		height: 300px;
+		margin: 10px;
+		padding: 10px;
+		border: 1px solid #aaaaaa;
+	}
+	</style>
+
+</head>
+<body>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<img id="dragImg" src="../../image/img.jpg" width="250px" draggable="true" ondragstart="drag(event)"/>
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+	
+</div>
+
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+	
+</div>
+
+<script type="text/javascript">
+	function drag(ev) {
+		ev.dataTransfer.setData("ext", ev.target.id);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("ext");
+		ev.target.appendChild(document.getElementById(data));
+	}
+
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+</script>
+
+</body>
+</html>
